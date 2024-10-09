@@ -1,0 +1,68 @@
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Убираем разделение ячеек */
+    margin: 20px 0;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+  
+  .table th, .table td {
+    padding: 12px 15px; /* Пространство внутри ячеек */
+  }
+  
+  .table thead {
+    background-color: #009879;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  
+  .table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3; /* Зебра для строк */
+  }
+  
+  .table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f1f1f1; /* Ховер эффект для строк */
+    cursor: pointer; /* Указываем курсор для интерактивности */
+  }
+  
+  /* Адаптация под мобильные устройства */
+  @media screen and (max-width: 600px) {
+    .table thead {
+      display: none; /* Скрываем заголовок таблицы на мобильных */
+    }
+  
+    .table, .table tbody, .table tr, .table td {
+      display: block; /* Делаем таблицу блочной */
+      width: 100%;
+    }
+  
+    .table tr {
+      margin-bottom: 15px;
+    }
+  
+    .table td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  
